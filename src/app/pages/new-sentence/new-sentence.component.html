@@ -1,0 +1,88 @@
+<div class="container mt-4">
+    <div class="row text-center mb-4">
+        <h2>Create sentence</h2>
+    </div>
+    <form>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="nouns">Nouns</label>
+                <select (change)="stateChanged($event.target.value)" class="form-control" id="nouns">
+                    <option></option>
+                    <option *ngFor="let noun of nouns">{{ noun.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="verbs">Verbs</label>
+                <select class="form-control" id="verbs">
+                    <option></option>
+                    <option *ngFor="let verb of verbs">{{ verb.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="adjectives">Adjectives</label>
+                <select class="form-control" id="adjectives">
+                    <option></option>
+                    <option *ngFor="let adjective of adjectives">{{ adjective.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="adverbs">Adverbs</label>
+                <select class="form-control" id="adverbs">
+                    <option></option>
+                    <option *ngFor="let adverb of adverbs">{{ adverb.value }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="pronouns">Pronouns</label>
+                <select class="form-control" id="pronouns">
+                    <option></option>
+                    <option *ngFor="let pronoun of pronouns">{{ pronoun.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="prepositions">Prepositions</label>
+                <select class="form-control" id="prepositions">
+                    <option></option>
+                    <option *ngFor="let preposition of prepositions">{{ preposition.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="conjuctions">Conjuctions</label>
+                <select class="form-control" id="conjuctions">
+                    <option></option>
+                    <option *ngFor="let conjuction of conjuctions">{{ conjuction.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="determiners">Determiners</label>
+                <select class="form-control" id="determiners">
+                    <option></option>
+                    <option *ngFor="let determiner of determiners">{{ determiner.value }}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="exclamations">Exclamations</label>
+                <select class="form-control" id="exclamations">
+                    <option></option>
+                    <option *ngFor="let exclamation of exclamations">{{ exclamation.value }}</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row mt-4">
+            <div class="form-control col-md-12">
+              <label for="newSentence">New Sentence</label>
+              <input disabled="true" [(ngModel)]="newSentence" type="text" class="form-control" id="newSentence" name="newSentence">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-2">
+                <button class="btn btn-primary form-control" id="submit" (click)="onSubmit()">Submit</button>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-secondary form-control" href="/all-sentences">See All Sentences</a>
+            </div>
+        </div>
+    </form>    
+</div>
